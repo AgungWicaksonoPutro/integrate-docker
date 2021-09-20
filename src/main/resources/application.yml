@@ -1,0 +1,24 @@
+#Configuration Application
+server:
+  port: 5500
+  error:
+    include-message: always
+#Configuration Database
+spring:
+  application:
+    name: "docker-test"
+  profiles:
+    active: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      naming-strategy: org.hibernate.cfg.ImproveNamingStrategy
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5400/db_docker_test
+    username: postgres
+    password: postgres
